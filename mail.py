@@ -12,7 +12,12 @@ to_list = ["your target"]
 email_conn = smtplib.SMTP(host, port)
 email_conn.ehlo()
 email_conn.starttls()
-email_conn.login(username, password)
+try:
+    email_conn.login(username, password)
+    email_conn.sendmail(from_email, to_list, "This is a test email from python")
+except smtplib.STMPAuthenticationError:
+    print("Could not login")
+except:
+    print("Error occured when login or sending email")
 
-email_conn.sendmail(from_email, to_list, "This is a test email from python")
 email_conn.quit()
