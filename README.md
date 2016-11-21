@@ -5,6 +5,9 @@ Remember to turn on the setting in gmail
 1. turn on the pop
 2. turn on the IMAP
 
+
+#Debugging
+
 If you get `534` error while try to login using python
 
 Go to Google's Account Security Settings: www.google.com/settings/security
